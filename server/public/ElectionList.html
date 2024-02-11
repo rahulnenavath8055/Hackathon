@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election List</title>
+    <link rel="stylesheet" href="ElectionList.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="Plugin icon - 1.png" alt="">
+                        <span class="Title">Online Voting System</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="Title">Dashborad</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-id-card'></i>
+                        <span class="Title">Authentication</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="Title">Election List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-trophy'></i>
+                        <span class="Title">Results</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-log-out'></i>
+                        <span class="Title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MAIN STARTS-->
+        <div class="main" id="blur2">
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <!-- TOGGLE BUTTON STARTS-->
+                <div class="toggle">
+                    <i class='bx bx-menu'></i>
+                    <div class="dashboard">Election List</div>
+                </div>
+                
+                <!-- TOGGLE BUTTON ENDS -->
+
+
+                <!-- PTOFILE STARTS -->
+                <div class="user">
+                    <img src="profile.jpg" alt="" class="">
+                    <span class="profile_name">Profile</span>
+                    <i class='bx bx-chevron-down' ></i>
+                </div>
+                <!-- PROFILE ENDS -->
+            </div>
+            <!-- TOPBAR ENDS -->
+
+
+            <div class="details"><div class="main_header">
+                <table>
+                    <thead>
+                        <th>
+                                <td>Date</td>
+                                <td>Type</td>
+                                <td>Location</td>
+                                <td>Status</td>
+                        </th>
+                    </thead>
+                </table>
+            </div>
+            <div class="tab">
+                <input type="radio" name="acc" id="acc1">
+                <label for="acc1" class="ongoing">
+                    <h2></h2>
+                    <table class="ongoing">
+                        <thead>
+                                <td>Nov 2022</td>
+                                <td>State Legislative</td>
+                                <td>Himachal Pradesh</td>
+                                <td>Ongoing</td>
+                        </thead>
+                    </table>
+                </label>
+                <div class="content">
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Illum unde sequi labore placeat repudiandae vitae iusto 
+                        excepturi sapiente a vel!
+                    </p>
+                </div>
+            </div>
+            <div class="tab">
+                <input type="radio" name="acc" id="acc2">
+                <label for="acc2" class="offline">
+                    <h2></h2>
+                    <table class="offline">
+                        <thead>
+                            <td>Dec 2022</td>
+                            <td>State Legislative</td>
+                            <td>Gujrat</td>
+                            <td>Offline</td>
+                        </thead>
+                    </table>
+                </label>
+                <div class="content">
+                    <p>
+                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                       Expedita praesentium laudantium earum. Amet aliquam iusto 
+                       saepe aut nihil veritatis, harum exercitationem quidem expedita, 
+                       minima facilis architecto dolores culpa? Magnam, quam.
+                    </p>
+                </div>
+            </div>
+            <div class="tab">
+                <input type="radio" name="acc" id="acc3">
+                <label for="acc3" class="offline">
+                    <h2></h2>
+                    <table class="offline">
+                        <thead>
+                                <td>TBD</td>
+                                <td>Legislative</td>
+                                <td>Bhihar</td>
+                                <td>Offline</td>
+                        </thead>
+                    </table>
+                </label>
+                <div class="content">
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Illum unde sequi labore placeat repudiandae vitae iusto 
+                        excepturi sapiente a vel!
+                    </p>
+                </div>
+            </div>
+            <div class="tab">
+                <input type="radio" name="acc" id="acc4">
+                <label for="acc4" class="ended">
+                    <h2></h2>
+                    <table class="ended">
+                        <thead>
+                            <td>14 Feb 2022</td>
+                            <td>State Legislative</td>
+                            <td>Uttarakhand</td>
+                            <td>Ended</td>
+                        </thead>
+                    </table>
+                </label>
+                <div class="content">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Quos natus iste excepturi autem rem. Id exercitationem, 
+                        velit quidem quia esse eius iste, vel alias eligendi, 
+                        dolorum atque optio? Sapiente dolores neque, quidem suscipit 
+                        voluptates tempore numquam temporibus qui a laborum?
+                    </p>
+                </div></div>
+        
+        </div>
+    </div>
+
+    <script>
+         let toggle = document.querySelector('.toggle');
+     let navigation = document.querySelector('.navigation');   
+     let list = document.querySelectorAll('.navigation li');
+     let main = document.querySelector('.main');
+
+     toggle.onclick= function(){
+        navigation.classList.toggle('active');
+        main.classList.toggle('active');
+     }
+
+     function activeLink(){
+        list.forEach((item) => 
+        item.classList.remove('hovered'));
+        this.classList.add('hovered');
+     }   
+     list.forEach((item) =>
+     item.addEventListener('mouseover',activeLink));
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Voting System</title>
+  <link rel="stylesheet" href="OTP_Confirmation.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/0727b8a9bf.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  
+  <div class="header">
+    <nav>
+      <a href="index.html"><img src="Images/Logo 2.png"></a>
+
+      <a href="index.html" class="Company">Online Voting System</a>
+      <div class="alertPopup">
+        <div class="alert" id="A1" >
+          <strong>Unsuccess!</strong> Incorrect OTP.
+        </div> 
+        <div class="alert warning" id="A4" > 
+          <strong>Warning!</strong> Please fill the Fields.
+        </div>
+        
+      </div>
+      
+  </div>
+    <div class="Home">
+      <div class="text-box">
+        <div class="signin-signup">
+          
+          <form action="#" class="sign-in-form">
+            <i class="fa-solid fa-circle-user"></i>
+            <h2 class="title">Mobile Verification</h2>
+            
+            <div class="mobile">
+              <p>The OTP is sent to this number <input id="mobile_num" value="XXXXXXX972" readonly> . <br>Please don't share OTP with anyone.</p>
+            </div>
+            <div class="Input_Refresh">
+              <div class=" input-field">
+                <i class="fas fa-lock"></i>
+                <input type="number"id="OTP" placeholder="  Enter OTP">
+                
+              </div>
+              <button id="Resend"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+            <div class="timer">
+             <p>Resend</p> <span id="timer"></span>
+            </div>
+            <input type="button" id="Submit" class="btn solid" value="Submit">
+            <script>
+              let popupIn = document.getElementById("A1");
+              let popupInv = document.getElementById("A4");
+              let submitButton = document.querySelector('#Submit');
+              let otp_value = document.querySelector('#OTP');
+
+              submitButton.addEventListener('click', function() {
+                login();
+              });
+              function login(){
+                if (otp_value.value === "") {
+                  popupInv.classList.add("open-Alert");
+                  setTimeout(() => {
+                    popupInv.classList.remove("open-Alert");
+                  },1000);
+                } 
+              else{
+                window.location.href = "Dashboard.html";
+              }
+            }
+              
+            </script>
+            <script>
+
+            </script>
+            <script>
+              
+            document.getElementById('timer').innerHTML = "02" + ":" + 59;
+              startTimer();
+              function startTimer() {
+                var presentTime = document.getElementById('timer').innerHTML;
+                var timeArray = presentTime.split(/[:]+/);
+                var m = timeArray[0];
+                var s = checkSecond((timeArray[1] - 1));
+                if(s==59){m=m-1}
+                if(m<0){
+                  return
+                }
+                document.getElementById('timer').innerHTML = m + ":" + s;
+                console.log(m)
+                setTimeout(startTimer, 1000);
+              }
+              function checkSecond(sec) {
+                if (sec < 10 && sec >= 0) {sec = "0" + sec};
+                if (sec < 0) {sec = "59"};
+                return sec;
+              }
+
+            </script>
+            
+          </form>
+        </div>
+
+      </div>
+    </div>
+    
+
+</body>
+
+</html>

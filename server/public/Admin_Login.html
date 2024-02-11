@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="Admin_Login.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0727b8a9bf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <a href = "index.html"><img src = "Images/Logo 2.png"></a>
+            <a href = "index.html" class ="Company">Online Voting System</a>
+            <div class="alertPopup">
+                <div class="alert" id="A1" >
+                  <strong>Unsuccess!</strong> Invalid Usename/Password.
+                </div>
+          
+                <div class="alert success" id="A2">
+                  <strong>Success!</strong> Login Successfull.
+                </div>
+
+                <div class="alert warning" id="A3" > 
+                  <strong>Warning!</strong> Please fill the Fields.
+                </div>
+                
+              </div>
+            <div class ="nav-links" id ="navLinks">
+                <i class="fa-solid fa-rectangle-xmark" onClick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="login.html">VOTER LOGIN</a></li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars" onClick="showMenu()"></i>
+            
+
+        </nav>
+    </div>
+    <div class="Home">
+        <div class="text-box">
+            <div class="signin-signup">
+                <form action="#" class="sign-in-form">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <h2 class="title">Admin</h2>  
+                    <div class="input-field">
+                        <i class="fas fa-user"></i> 
+                        <input type="email" placeholder="Username" id="username">
+                    </div>  
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" id ="password">
+                    </div>
+                    
+                    <input type="button" id="Login" class="btn solid" value="Login" >
+
+                    <script>
+            
+                        
+                        let popupCo = document.getElementById("A2");
+                        let popupIn = document.getElementById("A1");
+                        let popupInv = document.getElementById("A3");
+
+                        let LoginButton = document.querySelector('#Login');
+                        let Username = document.getElementById("username");
+                        let Password = document.getElementById("password");
+            
+                        LoginButton.addEventListener('click', function() {
+                            login();
+                        });
+                        function login(){
+                            if (Username.value == "admin@digitalindia.com" && Password.value =="admin@123") {
+                                // setTimeout(() => {},2000);
+                               window.location.href = "Admin_dashboard.html";
+                            } 
+                            else if(Username.value == "" || Password.value ==""){
+                                popupInv.classList.add("open-Alert");
+                                setTimeout(() => {
+                                        popupInv.classList.remove("open-Alert");
+                                    },1000);
+                            }
+
+                            else {
+                                popupIn.classList.add("open-Alert");
+                                setTimeout(() => {
+                                        popupIn.classList.remove("open-Alert");
+                                    },1000);
+                            }
+                        }
+                        
+                        </script>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>

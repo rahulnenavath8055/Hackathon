@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js" type="text/javascript"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    
+
+    <div class="container" id="blur">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="Plugin icon - 1.png" alt="">
+                        <span class="Title">Online Voting System</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="Dash_a" onclick="openTab('blur2');">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="Title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="Auth_a" onclick="openTab('Auth');">
+                        <i class='bx bx-id-card'></i>
+                        <span class="Title">Authentication</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="Elec_a" >
+                        <i class='bx bx-list-ul'></i>
+                        <span class="Title">Election List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="Nom_a">
+                        <i class='bx bx-trophy'></i>
+                        <span class="Title">Nomines List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="poll_a" >
+                        <i class='bx bx-trophy'></i>
+                        <span class="Title">Polling</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="Res_a" onclick="openTab('Result');">
+                        <i class='bx bx-trophy'></i>
+                        <span class="Title">Results</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <i class='bx bx-log-out'></i>
+                        <span class="Title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MAIN STARTS-->
+        <div class="main" id="blur2" >
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <!-- TOGGLE BUTTON STARTS-->
+                <div class="toggle">
+                    <i class='bx bx-menu'></i>
+                    <div class="dashboard">Dashboard</div>
+                </div>
+                
+                <!-- TOGGLE BUTTON ENDS -->
+
+
+                <!-- PTOFILE STARTS -->
+                <div class="user">
+                    <img src="profile.jpg" alt="" class="">
+                    <span class="profile_name">Profile</span>
+                    <i class='bx bx-chevron-down' ></i>
+                </div>
+                <!-- PROFILE ENDS -->
+            </div>
+            <!-- TOPBAR ENDS -->
+
+            <!-- CARDS STARTS -->
+            <div class="cardbox">
+                <div class="card" onclick="popup_toggle()">
+                    <div>
+                       <div class="step_number"> Step 1 </div>
+                       <div class="step_text">Select a Live Poll</div>
+                    </div>
+                    <div class="iconbox">
+                        <i class='bx bx-right-arrow-alt' ></i>
+                        <span class="text">Show More</span>
+                    </div>
+                </div>
+                <div class="card" onclick="popup_toggle()">
+                    <div>
+                       <div class="step_number"> Step 2 </div>
+                       <div class="step_text">Verify your Voter ID</div>
+                    </div>
+                    <div class="iconbox">
+                        <i class='bx bx-right-arrow-alt' ></i>
+                        <span class="text">Show More</span>
+                    </div>
+                </div>
+                <div class="card" onclick="popup_toggle()">
+                    <div>
+                       <div class="step_number"> Step 3 </div>
+                       <div class="step_text">View the Candidate List</div>
+                    </div>
+                    <div class="iconbox">
+                        <i class='bx bx-right-arrow-alt' ></i>
+                        <span class="text">Show More</span>
+                    </div>
+                </div>
+                <div class="card" onclick="popup_toggle()">
+                    <div>
+                       <div class="step_number"> Step 4 </div>
+                       <div class="step_text">Cast your Vote</div>
+                    </div>
+                    <div class="iconbox">
+                        <i class='bx bx-right-arrow-alt' ></i>
+                        <span class="text">Show More</span>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD ENDS -->
+
+            
+
+            <!-- DETAILS -->
+            <div class="details">
+                <div class="upcoming_elections">
+                    <div class="cardheader">
+                        <h2>Upcoming Elections</h2>
+                        <a href="#" class="btn1">View All</a>
+                    </div>
+                    <table>
+                       <thead>
+                        <tr>
+                            <td>Date</td>
+                            <td>Type</td>
+                            <td>Location</td>
+                            <td>Status</td>
+                        </tr>
+                       </thead> 
+                       <tbody>
+                        <tr>
+                            <td>Nov 2022</td>
+                            <td>State Legislative</td>
+                            <td>Himachal Pradesh</td>
+                            <td><span class="status_ongoing">Ongoing</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dec 2022</td>
+                            <td>State Legislative</td>
+                            <td>Gujrat</td>
+                            <td><span class="status_offline">Offline</span></td>
+                        </tr>
+                        <tr>
+                            <td>TBD</td>
+                            <td>Legislative</td>
+                            <td>Gopalganj, Bhihar</td>
+                            <td><span class="status_offline">Offline</span></td>
+                        </tr>
+                        <tr>
+                            <td>14 Feb 2022</td>
+                            <td>State Legislative</td>
+                            <td>Uttarakhand</td>
+                            <td><span class="status_completed">Completed</span></td>
+                        </tr>
+                       </tbody>
+                    </table>
+                </div>
+
+
+                <div class="recent_news">
+                    <div class="cardheader">
+                        <h2>Recent News</h2>
+                    </div>
+                    <table>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox">
+                                    <img src="Images/HT_logo.jpg" alt="">
+                                </div>
+                                <td><h4>BJP wins in West Bengal's Nandigram<br>
+                                <span><a target="_blank" href="https://www.hindustantimes.com/india-news/bjp-wins-election-in-west-bengal-s-nandigram-cooperative-body-101663508160389.html">Know more</a></span></h4></td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox">
+                                    <img src="Images/ABP_live.jpg" alt="">
+                                </div>
+                                <td><h4>Maharashtra Gram Panchayat Results<br>
+                                    <span><a target="_blank" href="https://news.abplive.com/news/india/maharashtra-gram-panchayat-election-result-2022-updates-bjp-eknath-shinde-shiv-sena-alliance-congress-ncp-1554096">Know more</a></span></h4></td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox">
+                                    <img src="Images/BS_logo.jpg" alt="">
+                                </div>
+                                <td><h4>Election Commission launched E-Patrika<br>
+                                    <span><a target="_blank" href="https://currentaffairs.adda247.com/election-commission-of-india-launched-blo-e-patrika/">Know more</a></span></h4></td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox">
+                                    <img src="Images/adda247_logo.jpg" alt="">
+                                </div>
+                                <td><h4>EC team visits Gujarat ahead of polls<br>
+                                    <span><a target="_blank" href="https://www.business-standard.com/article/current-affairs/ec-team-visits-gujarat-ahead-of-polls-reviews-election-preparedness-122091900048_1.html">Know more</a></span></h4></td>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>  
+        <div class="main" id="blur1" style="display: none;">
+        
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <!-- TOGGLE BUTTON STARTS-->
+                <div class="toggle">
+                    <i class='bx bx-menu'></i>
+                    <div class="dashboard">Election List</div>
+                </div>
+        
+                <!-- TOGGLE BUTTON ENDS -->
+        
+        
+                <!-- PTOFILE STARTS -->
+                <div class="user">
+                    <img src="profile.jpg" alt="" class="">
+                    <span class="profile_name">Profile</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <!-- PROFILE ENDS -->
+            </div>
+            <!-- TOPBAR ENDS -->
+        
+        
+            <div class="details1">
+                <div class="main_header">
+                    <table>
+                        <thead>
+                            <th>
+                            <td>Date</td>
+                            <td>Type</td>
+                            <td>Location</td>
+                            <td>Status</td>
+                            </th>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="acc" id="acc1">
+                    <label for="acc1" class="ongoing" >
+                        <h2></h2>
+                        <table class="ongoing">
+                            <thead>
+                                <td>Nov 2022</td>
+                                <td>State Legislative</td>
+                                <td>Himachal Pradesh</td>
+                                <td  onclick ="openTab('Cand')">Ongoing</td>
+                            </thead>
+                        </table>
+                    </label>
+                    <div class="content">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Illum unde sequi labore placeat repudiandae vitae iusto
+                            excepturi sapiente a vel!
+                        </p>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="acc" id="acc2">
+                    <label for="acc2" class="offline">
+                        <h2></h2>
+                        <table class="offline">
+                            <thead>
+                                <td>Dec 2022</td>
+                                <td>State Legislative</td>
+                                <td>Gujrat</td>
+                                <td>Offline</td>
+                            </thead>
+                        </table>
+                    </label>
+                    <div class="content">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Expedita praesentium laudantium earum. Amet aliquam iusto
+                            saepe aut nihil veritatis, harum exercitationem quidem expedita,
+                            minima facilis architecto dolores culpa? Magnam, quam.
+                        </p>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="acc" id="acc3">
+                    <label for="acc3" class="offline">
+                        <h2></h2>
+                        <table class="offline">
+                            <thead>
+                                <td>TBD</td>
+                                <td>Legislative</td>
+                                <td>Bhihar</td>
+                                <td>Offline</td>
+                            </thead>
+                        </table>
+                    </label>
+                    <div class="content">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Illum unde sequi labore placeat repudiandae vitae iusto
+                            excepturi sapiente a vel!
+                        </p>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="acc" id="acc4">
+                    <label for="acc4" class="ended">
+                        <h2></h2>
+                        <table class="ended">
+                            <thead>
+                                <td>14 Feb 2022</td>
+                                <td>State Legislative</td>
+                                <td>Uttarakhand</td>
+                                <td>Ended</td>
+                            </thead>
+                        </table>
+                    </label>
+                    <div class="content">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Quos natus iste excepturi autem rem. Id exercitationem,
+                            velit quidem quia esse eius iste, vel alias eligendi,
+                            dolorum atque optio? Sapiente dolores neque, quidem suscipit
+                            voluptates tempore numquam temporibus qui a laborum?
+                        </p>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+       <!-- POPSP STARTS -->
+    <div id="popup">
+        <div class="popup_icon">
+            <i class='bx bx-detail'></i>
+        </div>
+        <div class="popup_content">
+          <h2>Step 1</h2>
+          <div class="popup_text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium nostrum provident sapiente placeat velit similique id perspiciatis suscipit, tenetur ex in, assumenda explicabo quos autem tempora maiores!</div>
+        </div>
+        <div class="dismiss" onclick="popup_toggle()">
+            <button class="dismiss_btn">Dismiss</button>
+        </div>
+    </div>
+    <div id="popup">
+        <div class="popup_icon">
+            <i class='bx bx-detail'></i>
+        </div>
+        <h2>Step 2</h2>
+        <div class="popup_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.</div>
+        <div class="dismiss" onclick="popup_toggle()">
+            <button class="dismiss_btn">Dismiss</button>
+        </div>
+    </div>
+    <!-- <div id="overlay" onclick="popup_toggle()"></div> -->
+    <!-- POPUP ENDS --> 
+    <div class="main" id="Auth" style="display: none;">
+    
+        <!-- TOPBAR -->
+        <div class="topbar">
+    
+            <!-- TOGGLE BUTTON STARTS-->
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+                <div class="dashboard">Authenticate</div>
+            </div>
+            <!-- TOGGLE BUTTON ENDS -->
+    
+    
+            <!-- PTOFILE STARTS -->
+            <div class="user">
+                <img src="profile.jpg" alt="" class="">
+                <span class="profile_name">Profile</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+            <!-- PROFILE ENDS -->
+    
+        </div>
+        <!-- TOPBAR ENDS -->
+    
+    
+        <!-- FORMS STARTS -->
+        <div class="Home">
+            
+            <div class="text-box">
+                <div class="alertPopup">
+                    <div class="alert" id="A1">
+                        <strong>Unsuccess!</strong> Invalid Voter number.
+                    </div>
+                
+                    <div class="alert success" id="A2">
+                        <strong>Success!</strong> Your Voter is validated
+                    </div>
+                
+                    <div class="alert info" id="A3">
+                        <strong>Captcha!</strong> Incorrect CAPTCHA.
+                    </div>
+                
+                    <div class="alert warning" id="A4">
+                        <strong>Warning!</strong> Please fill the Fields.
+                    </div>
+                
+                </div>
+                <div class="signin-signup">
+                    <form action="#" class="sign-in-form">
+                        <i class='bx bxs-id-card'></i>
+                        <h2 class="title"> Voter Verfication</h2>
+                        <div class="input-field">
+                            <i class='bx bxs-user'></i>
+                            <input type="number" id="Voter"placeholder="Voter ID">
+                        </div>
+                        <div class="input-field">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="captha" id="Captcha" placeholder="CAPTCHA">
+                        </div>
+                        <!-- CAPTCHA BOX STARTS -->
+                        <div class="captcha-box">
+                            <canvas id="myCanvas"> </canvas>
+                            <input type="button" id="refresh" class="btn solid" value="Refresh">
+                        </div>
+    
+                        <!-- CAPTCHA BOX ENDS -->
+    
+                        <input type="button" id="Login" class="btn solid" value="Verify">
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+        <!-- FORM ENDS -->
+    
+    </div>
+    <div class="main" id="Result" style="display: none;">
+    
+        <!-- TOPBAR -->
+        <div class="topbar">
+    
+            <!-- TOGGLE BUTTON STARTS-->
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+                <div class="dashboard">Results</div>
+            </div>
+            <!-- TOGGLE BUTTON ENDS -->
+    
+    
+            <!-- PTOFILE STARTS -->
+            <div class="user">
+                <img src="profile.jpg" alt="" class="">
+                <span class="profile_name">Profile</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+            <!-- PROFILE ENDS -->
+    
+        </div>
+        <!-- TOPBAR ENDS -->
+    
+    
+        <!-- FORMS STARTS -->
+        <div class="Home">
+            <div class="text-box">
+                <h1>Polling Results</h1>
+                <div class="graph" id="graph">
+    
+    
+                </div>
+                <div class="Res">
+                    <div class="candidates">
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/BJP_Flag.svg.png" />
+                                <h2>Candidate 1</h2>
+                                <p>Party : BJP</p>
+                                <p>% : 65</p>
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/INC.png" />
+                                <h2>Candidate 2</h2>
+                                <p>Party : INC</p>
+                                <p>% : 19</p>
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/NPP_Flag.jpg" />
+                                <h2>Candidate 3</h2>
+                                <p>Party : NPP</p>
+                                <p>% : 1</p>
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/NCP.png" />
+                                <h2>Candidate 4</h2>
+                                <p>Party : NCP</p>
+                                <p>% : 2</p>
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/CPI.png" />
+                                <h2>Candidate 5</h2>
+                                <p>Party : CPI</p>
+                                <p>% : 5</p>
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/bsp.png" />
+                                <h2>Candidate 6</h2>
+                                <p>Party : BSP</p>
+                                <p>% : 6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <div class="main" id="Cand" style="display: none;">
+    
+        <!-- TOPBAR -->
+        <div class="topbar">
+    
+            <!-- TOGGLE BUTTON STARTS-->
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+                <div class="dashboard">Results</div>
+            </div>
+            <!-- TOGGLE BUTTON ENDS -->
+    
+    
+            <!-- PTOFILE STARTS -->
+            <div class="user">
+                <img src="profile.jpg" alt="" class="">
+                <span class="profile_name">Profile</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+            <!-- PROFILE ENDS -->
+    
+        </div>
+        <!-- TOPBAR ENDS -->
+    
+    
+        <!-- FORMS STARTS -->
+        <div class="Home">
+            <div class="text-box">
+                <h1 id="title">Nomines List</h1>
+    
+                <div class="Res">
+                    <div class="candidates">
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/male.png" onclick ="openTab('Poll')"/>
+                                <h2>Candidate 1</h2>
+                                <p>Party : BJP</p>
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/male.png" onclick ="openTab('Poll')"/>
+                                <h2>Candidate 2</h2>
+                                <p>Party : INC</p>
+    
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/male.png" onclick ="openTab('Poll')"/>
+                                <h2>Candidate 3</h2>
+                                <p>Party : NPP</p>
+    
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox" >
+                                <img src="./Images/male.png" onclick ="openTab('Poll')" />
+                                <h2>Candidate 4</h2>
+                                <p>Party : NCP</p>
+    
+                            </div>
+                        </div>
+                        <div class="card C1" >
+                            <div class="imgBox">
+                                <img src="./Images/female.png" onclick ="openTab('Poll')" />
+                                <h2>Candidate 5</h2>
+                                <p>Party : CPI</p>
+    
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/female.png" onclick ="openTab('Poll')" />
+                                <h2>Candidate 6</h2>
+                                <p>Party : BSP</p>
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="candidates_details">
+                        <div class="card C1">
+                            <h1>Qualifications</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Illum unde sequi labore placeat repudiandae vitae iusto
+                                excepturi sapiente a vel!
+                            </p>
+                        </div>
+                        <div class="card C1">
+                            <h1>Qualifications</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Illum unde sequi labore placeat repudiandae vitae iusto
+                                excepturi sapiente a vel!
+                            </p>
+                        </div>
+                        <div class="card C1">
+                            <h1>Qualifications</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Illum unde sequi labore placeat repudiandae vitae iusto
+                                excepturi sapiente a vel!
+                            </p>
+                        </div>
+                        <div class="card C1">
+                            <h1>Qualifications</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Illum unde sequi labore placeat repudiandae vitae iusto
+                                excepturi sapiente a vel!
+                            </p>
+                        </div>
+                        <div class="card C1">
+                            <h1>Qualifications</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Illum unde sequi labore placeat repudiandae vitae iusto
+                                excepturi sapiente a vel!
+                            </p>
+                        </div>
+                        <div class="card C1">
+                            <h1>Qualifications</h1>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Illum unde sequi labore placeat repudiandae vitae iusto
+                                excepturi sapiente a vel!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+    </div>
+    <div class="main" id="Poll" style="display: none;">
+    
+        <!-- TOPBAR -->
+        <div class="topbar">
+    
+            <!-- TOGGLE BUTTON STARTS-->
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+                <div class="dashboard">Polling</div>
+            </div>
+            <!-- TOGGLE BUTTON ENDS -->
+    
+    
+            <!-- PTOFILE STARTS -->
+            <div class="user">
+                <img src="profile.jpg" alt="" class="">
+                <span class="profile_name">Profile</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+            <!-- PROFILE ENDS -->
+    
+        </div>
+        <!-- TOPBAR ENDS -->
+    
+    
+        <!-- FORMS STARTS -->
+        <div class="Home">
+            <div class="text-box">
+                <h1 id="title">Select your choice</h1>
+                <div class="Res">
+                    <div class="candidates">
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/BJP_Flag.svg.png" />
+                                <h2>Bharatiya Janta Party</h2>
+                                <p><button onclick="" class="votebutton">VOTE</button></p>
+    
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/INC.png" />
+                                <h2>Indian National Congress</h2>
+                                <p><button class="votebutton">VOTE</button></p>
+    
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/NPP_Flag.jpg" />
+                                <h2>National People's Party</h2>
+                                <p><button class="votebutton">VOTE</button></p>
+    
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/NCP.png" />
+                                <h2>Nationalist Congress Party</h2>
+                                <p><button class="votebutton">VOTE</button></p>
+    
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/CPI.png" />
+                                <h2>Communist Party of India</h2>
+                                <p><button class="votebutton">VOTE</button></p>
+    
+                            </div>
+                        </div>
+                        <div class="card C1">
+                            <div class="imgBox">
+                                <img src="./Images/bsp.png" />
+                                <h2>Bahujan Samaj Party</h2>
+                                <p><button class="votebutton">VOTE</button></p>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        <!-- FORM ENDS -->
+    </div>
+    <!-- SCRIPT -->
+    <script>
+        // bar.js
+        var chart = new ej.charts.Chart({
+            //Initializing Primary X Axis
+            primaryXAxis: {
+                valueType: "Category",
+                title: "Parties"
+            },
+            //Initializing Primary Y Axis
+            primaryYAxis: {
+                title: "Number of Votes"
+            },
+            //Initializing Chart Series
+            series: [
+                {
+                    type: "Bar",
+                    dataSource: [
+                        { Party: "BJP", Votes_Percent: 65, color: '#c6e2b6' },
+                        { Party: "INC", Votes_Percent: 21, color: '#99c4ff' },
+                        { Party: "NPP", Votes_Percent: 2, color: '#a4f4d9' },
+                        { Party: "NCP", Votes_Percent: 6, color: '#99fffb' },
+                        { Party: "CPI", Votes_Percent: 1, color: '#ffaf99' },
+                        { Party: "BSP", Votes_Percent: 5, color: '#ff99b0' }
+
+                    ],
+                    xName: "Party",
+                    yName: "Votes_Percent",
+                    pointColorMapping: 'color',
+
+                }
+
+            ]
+        });
+        chart.appendTo(".graph");
+    </script>
+    <script>
+        
+        let captchaText = document.querySelector('#myCanvas');
+        var ctx = captchaText.getContext("2d");
+        ctx.font = "45px Roboto";
+        ctx.fillStyle = "#000";
+
+        let userText = document.querySelector('#Captcha');
+        let Voter = document.querySelector('#Voter');
+        let submitButton = document.querySelector('#Login');
+        let refreshButton = document.querySelector('#refresh');
+        let popupCo = document.getElementById("A2");
+        let popupIn = document.getElementById("A1");
+        let popupInv = document.getElementById("A4");
+        let popupWar = document.getElementById("A3");
+        // alphaNums contains the characters with which you want to create the CAPTCHA
+        let alphaNums = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
+            , 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c'
+            , 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+            't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        let emptyArr = [];
+        // This loop generates a random string of 7 characters using alphaNums
+        // Further this string is displayed as a CAPTCHA
+        for (let i = 1; i <= 7; i++) {
+            emptyArr.push(alphaNums[Math.floor(Math.random() * alphaNums.length)]);
+        }
+        var c = emptyArr.join('');
+        ctx.fillText(emptyArr.join(''), captchaText.width / 4, captchaText.height / 2);
+
+        userText.addEventListener('keyup', function (e) {
+            if (e.keyCode === 13) {
+                login();
+                phoneAuth();
+            }
+        });
+
+        submitButton.addEventListener('click', function () {
+            login();
+            
+        });
+
+        refreshButton.addEventListener('click', function () {
+            userText.value = "";
+            let refreshArr = [];
+            refresh(refreshArr);
+        });
+        function refresh(refreshArr) {
+            for (let j = 1; j <= 7; j++) {
+                refreshArr.push(alphaNums[Math.floor(Math.random() * alphaNums.length)]);
+            }
+            ctx.clearRect(0, 0, captchaText.width, captchaText.height);
+            c = refreshArr.join('');
+            ctx.fillText(refreshArr.join(''), captchaText.width / 4, captchaText.height / 2);
+        }
+        function login() {
+            if (userText.value === c && Voter.value === "712979984763") {
+
+                setTimeout(() => {
+
+                }, 2000);
+                openTab('blur1');
+
+            }
+            else if (userText.value === "" || Voter.value === "") {
+                popupInv.classList.add("open-Alert");
+                setTimeout(() => {
+                    popupInv.classList.remove("open-Alert");
+                }, 2000);
+            }
+            else if (userText.value !== c && Voter.value === "712979984763") {
+                popupWar.classList.add("open-Alert");
+                setTimeout(() => {
+                    popupWar.classList.remove("open-Alert");
+                }, 2000);
+                let refreshArr = [];
+                refresh(refreshArr);
+            }
+            else {
+                popupIn.classList.add("open-Alert");
+                setTimeout(() => {
+                    popupIn.classList.remove("open-Alert");
+                }, 2000);
+                let refreshArr = [];
+                refresh(refreshArr, c, ctx);
+            }
+        }
+
+        
+    </script>
+    <script>
+     let toggle = document.querySelector('.toggle');
+     let navigation = document.querySelector('.navigation');   
+     let list = document.querySelectorAll('.navigation li');
+     let main = document.querySelector('.main');
+
+     toggle.onclick= function(){
+        navigation.classList.toggle('active');
+        main.classList.toggle('active');
+     }
+
+     function activeLink(){
+        list.forEach((item) => 
+        item.classList.remove('hovered'));
+        this.classList.add('hovered');
+     }   
+     list.forEach((item) =>
+     item.addEventListener('mouseover',activeLink));
+
+
+    //  POPUP
+     function popup_toggle(){
+            
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('popup_active');
+            var popup = document.getElementById('popup');
+            popup.classList.toggle('popup_active');
+            var overlay = document.getElementById('overlay');
+            overlay.classList.toggle('popup_active');   
+        }
+     function popup_text_toggle(){
+
+     } 
+     function openTab(tabName) {
+        var i;
+        var x = document.getElementsByClassName("main");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+        }
+
+    </script>
+    
+    
+</body>
+</html>

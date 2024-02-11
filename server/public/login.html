@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLINE VOTING SYSTEM</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0727b8a9bf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <a href="index.html"><img src="Images/Logo 2.png" alt="OVS Logo"></a>
+            <a href="index.html" class="Company">ONLINE VOTING SYSTEM</a>
+            <div class="alertPopup">
+                <div class="alert" id="A1"><strong>Unsuccess!</strong> Invalid Aadhar number.</div>
+                <div class="alert success" id="A2"><strong>Success!</strong> Your Aadhar is validated.</div>
+                <div class="alert info" id="A3"><strong>Captcha!</strong> Incorrect CAPTCHA.</div>
+                <div class="alert warning" id="A4"><strong>Warning!</strong> Please fill the Fields.</div>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-rectangle-xmark" onClick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="Admin_Login.html">ADMIN LOGIN</a></li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars" onClick="showMenu()"></i>
+        </nav>
+    </div>
+    <div class="Home">
+        <div class="text-box">
+            <div class="signin-signup">
+                <form id="login-form" class="sign-in-form">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <h2 class="title">Voter</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="number" name="Aadhar" id="Aadhar" placeholder="Aadhar Number" required>
+                    </div>  
+                    <div class="input-field">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" name="ContactNumber" id="ContactNumber" placeholder="Contact Number" pattern="[0-9]{10}" title="Enter a valid 10-digit contact number" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="text" name="Captcha" id="Captcha" placeholder="Enter CAPTCHA" required>
+                    </div>
+                    <div class="captcha-box">
+                        <canvas id="myCanvas"></canvas>
+                        <button type="button" id="refresh" class="btn solid">Refresh</button>
+                    </div>
+                    <input type="submit" class="btn solid" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+    <script>
+        // Your JavaScript for CAPTCHA and form handling
+              let captchaText = document.querySelector('#myCanvas');
+              var ctx = captchaText.getContext("2d");
+
+              ctx.font = "45px Roboto";
+              ctx.fillStyle = "#000";
+
+              let userText = document.querySelector('#Captcha');
+              let Aadhar = document.querySelector('#Aadhar');
+              let submitButton = document.querySelector('#gen_otp');
+              let refreshButton = document.querySelector('#refresh');
+              let popupCo = document.getElementById("A2");
+              let popupIn = document.getElementById("A1");
+              let popupInv = document.getElementById("A4");
+              let popupWar = document.getElementById("A3");
+              // alphaNums contains the characters with which you want to create the CAPTCHA
+              let alphaNums = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
+              , 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c'
+              , 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 
+              't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+              let emptyArr = [];
+              // This loop generates a random string of 7 characters using alphaNums
+              // Further this string is displayed as a CAPTCHA
+              for (let i = 1; i <=7; i++) {
+                  emptyArr.push(alphaNums[Math.floor(Math.random() * alphaNums.length)]);
+              }
+              var c = emptyArr.join('');
+              ctx.fillText(emptyArr.join(''),captchaText.width/4, captchaText.height/2);
+
+              userText.addEventListener('keyup', function(e) {
+                if (e.keyCode === 13) {
+                  login();
+                  phoneAuth();
+                }
+              });
+
+              submitButton.addEventListener('click', function() {
+                login();
+              });
+
+              refreshButton.addEventListener('click', function() {
+                  userText.value = "";
+                  let refreshArr = [];
+                  refresh(refreshArr);
+              });
+              function refresh(refreshArr){
+                for (let j = 1; j <= 7; j++) {
+                      refreshArr.push(alphaNums[Math.floor(Math.random() * alphaNums.length)]);
+                  }
+                  ctx.clearRect(0, 0, captchaText.width, captchaText.height);
+                  c = refreshArr.join('');
+                  ctx.fillText(refreshArr.join(''),captchaText.width/4, captchaText.height/2);
+              }
+              function login(){
+                if (userText.value === c&&Aadhar.value ==="742838420478") {
+                  
+                  setTimeout(() => {
+                      
+                  },2000);
+                      window.location.href = "OTP_Confirmation.html";
+
+                } 
+                else if (userText.value === "" || Aadhar.value ==="") {
+                  popupInv.classList.add("open-Alert");
+                  setTimeout(() => {
+                      popupInv.classList.remove("open-Alert");
+                  },2000);
+                }
+                else if (userText.value !== c&&Aadhar.value==="742838420478"){
+                  popupWar.classList.add("open-Alert");
+                  setTimeout(() => {
+                      popupWar.classList.remove("open-Alert");
+                  },2000);
+                  let refreshArr = [];
+                  refresh(refreshArr);
+                }
+                else{
+                  popupIn.classList.add("open-Alert");
+                  setTimeout(() => {
+                      popupIn.classList.remove("open-Alert");
+                  },2000);
+                  let refreshArr = [];
+                  refresh(refreshArr,c,ctx);
+                }
+              }
+            </script>
+            <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+            <script>
+              const firebaseConfig = {
+              apiKey: "AIzaSyAdjhmQtmMpnDpinE_e9JqWR30xWFkHO-g",
+              authDomain: "onlinevotingsystem202.firebaseapp.com",
+              projectId: "onlinevotingsystem202",
+              storageBucket: "onlinevotingsystem202.appspot.com",
+              messagingSenderId: "411681836015",
+              appId: "1:411681836015:web:92548096532a48a11a441a",
+              measurementId: "G-W9GHLCJ1JW"};
+              firebase.intializeApp(firebaseConfig);
+              
+            </script>
+          </form>
+
+          <!-- <form id="login-form">
+            <input type="text" name="" id="username">
+            <input type="password" name="" id="password">
+            <button type="submit">Submit</button>
+          </form> -->
+        </div>
+
+      </div>
+    </div>
+    
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        
+        const aadhar = document.getElementById('Aadhar').value;
+        const contact = document.getElementById('ContactNumber').value;
+         
+        window.location.href = "Dashboard.html";
+        fetch('http://localhost:3000/data', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ aadhar, contact }),
+})
+.then(response => response.json())
+.then(data => {
+    if (data.success) {
+        setTimeout(function() {
+            window.location.href = "Dashboard.html";
+        }, 1000); // Delay of 1 second (1000 milliseconds)
+    } else {
+        alert(data.message || "An error occurred, please try again.");
+    }
+})
+.catch((error) => {
+    console.error('Error:', error);
+    alert('An error occurred, please try again.');
+});
+    });
+});
+
+  </script>
+
+</body>
+
+</html>
